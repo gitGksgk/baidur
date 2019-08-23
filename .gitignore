@@ -1,3 +1,4 @@
 .hg/
 .hgignore
 node_modules
+report.2019*.json
