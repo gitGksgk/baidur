@@ -10,6 +10,12 @@
   "bin": {
     "baidur": "./search.js"
   },
+  "keywords": [
+    "baidu",
+    "search engine",
+    "bash",
+    "search"
+  ],
   "author": "issolf",
   "license": "GPL-3.0",
   "dependencies": {

@@ -61,12 +61,18 @@ npm install -g baidur
 ```
 就好了
 
+或者通过docker查看一份演示的baidur，由于无法打开浏览器或者复制链接，只能查看部分功能
+```
+docker run -it sdbsobsmb/baidur
+```
+
 # Acknowledge 致谢
 
 baidu-search
 
 搜索引擎开发者前辈们、开放搜索的UGC社区创造者、广大博主们
 
+bitkan 
 
 # Warning 注意
 
