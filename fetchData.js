@@ -37,7 +37,7 @@ async function baiduFilter(keyword, page, timewait){
 
 function promisifyBaidu(keyword, page){
   return new Promise( (resolve, reject) => {
-    baidu( keyword , page ,( (err,res)=>{
+    baidu( encodeURI(keyword) , page ,( (err,res)=>{
       resolve( res.links )
     }))
   })

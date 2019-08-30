@@ -40,7 +40,6 @@ alias bn="baidur '关键词 -排除词1 -排除词2'" // 注意搜索引擎的�
 安装 nodejs 生产环境。目前要求 >11.10.0， 一般附带了包管理工具npm，接着运行
 ```
 npm install -g baidur
-
 ```
 就好了
 
@@ -62,8 +61,6 @@ setupHistory 要求node版本11.10.0
 还有很多有价值的中文网页由于各种原因未能被百度收录
 
 # 开发进度
-known issue
-repl在不同终端上表现不同, 有的甚至不能接收中文
 
 o: done  a: alpha - thoughts  // cancel & comment<br  />
 显示
