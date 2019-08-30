@@ -1,4 +1,5 @@
 const {baiduFilter} = require('./fetchData.js')
+const chalk = require('chalk')
 //baiduShell -> this
 class contextWithNextSearchClass{
   constructor(context){
@@ -57,7 +58,7 @@ class contextWithNextSearchClass{
     // 3: queueLimit
     // console.log('autofillQueueNextSearch:start')
     // console.log('currentQueue')
-    // console.dir(baiduShell.context.resultQueue,{depth:1})
+    // console.dir(this.context.resultQueue,{depth:1})
     let {page, keyword} = this.context.currentSearch
     let queueLastPage = page + 1
     let {resultQueue, resultQueueStatus:{modifiable}} = this.context
@@ -85,7 +86,7 @@ class contextWithNextSearchClass{
         // console.dir(resultQueue,{depth:1})
         this.saveQueueStatus({ready:true})
         // console.log('autofillQueueNextSearch:done')
-        // console.log(baiduShell.context.resultQueueStatus)
+        // console.log(this.context.resultQueueStatus)
       }
     //} else {
       // queue 里无数据，认为是初始化，把已取得的数据装入
@@ -151,6 +152,7 @@ class contextWithNextSearchClass{
       //queue if(resultQueue[0]){
       //queue   console.log( resultQueue[0].keyword, resultQueue[0].nextReady )
       //queue }
+      // 未读取，则重新请求下一页
       this.getNextArray(baiduFilter(keyword, page + 1 ))
     }
     

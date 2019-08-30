@@ -7,8 +7,9 @@ baidur 是一个命令行工具，从命令行获取百度结果。因为用惯�
 
 优点
 
-- 预加载下一页, 速度快<br  />
 - 同时打开多个结果标签<br  />
+- 预加载下一页, 速度快<br  />
+- 按照搜索引擎支持情况，针对特定网站搜索快<br  />
 
 搭配使用
 
@@ -25,18 +26,32 @@ baidur 关键词
 baidur 关键词 site:stackoverflow.com
 baidur "关键词 -排除词"  
 ```
-这将启动一个repl交互解释器，以后可以直接在解释器里输入关键词，回车搜索
+这将启动一个repl交互解释器，以后可以直接在解释器里输入关键词，回车搜索;
+启动解释器后，输入 h ，回车，可以查看解释器帮助;
+
+假设有8个搜索结果，输入 1，3，5 可以同时在浏览器中打开这三个结果
 
 如要使用 - 语法，引号是必要的。否则bash将认为是一个选项参数而导致错误
 
 设置bash alias, 例如
 ```
-alias bs="baidur $@ site:stackoverflow.com"
 alias bg="baidur $@ site:github.com"
-alias bn="baidur '关键词 -排除词1 -排除词2'" # 注意搜索引擎的词数限制
+alias bs="baidur $@ inurl:stackoverflow.com"
+alias bf="baidur '关键词 -排除词1 -排除词2'" # 注意搜索引擎限制76个字符
 ```
+然后
+```
+bs MaxListenersExceededWarning 
+```
+假设感兴趣的是1，2，3,输入
+```
+1 2 3
+```
+回车，将会在浏览器中打开这三个结果的网址，在浏览器中查看结果
 
-程序将在home文件夹（linux、mac 一般为 /Users/username ， windows 一般为 C:\users\username) 建立.baidur 文件，用于保存搜索历史与配置，可以直接进去修改配置。也可以在命令行修改部分配置。
+baidur将在home文件夹（linux、mac 一般为 /Users/username ， windows 一般为 C:\users\username) 建立.baidur 文件，用于保存搜索历史与配置，可以直接进去修改配置。也可以在命令行修改部分配置。
+
+字体大小可以在终端设定
 
 # Installation 安装
 
@@ -62,6 +77,8 @@ baidu-search
 setupHistory 要求node版本11.10.0
 
 还有很多有价值的中文网页由于各种原因未能被百度收录
+
+由于百度的结果链接都是跳转链接，所以在解析过程中有可能失败，失败仍将返回百度跳转链接，这时域名会变成baidu.com（实际上可能不是baidu.com或者打不开）
 
 # 开发进度
 ```
@@ -125,6 +142,8 @@ o- 无结果<br  />
 
 # known issue 已知问题
 偶尔会显示 MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 pipe listeners added. Use emitter.setMaxListeners() to increase limit， 原因暂时不明
+
+搜索词较长时，百度搜索引擎将截断搜索词，由于相关算法还不明确，所以会只得到很少的结果。修复这一问题需要更改baidu-search这个依赖包，或者继承这个项目扩展一个分词截断
 
 # License 协议
 
