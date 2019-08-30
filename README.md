@@ -93,7 +93,7 @@ o- 脱离setupHistory 以便降低node版本等级要求<br  />
 -- 仅记录搜索词<br  />
 b- 上下方向键查询历史, 字节支持 // 得自己动手 困难 // 似乎发布后直接支持了<br  />
 -- 默认config的写入<br  />
--- repl: save current config<br  />
+o- repl: save current config<br  />
 -- repl: show current config<br  />
 -- repl 加入filter<br  />
 -- repl key mapping<br  />
