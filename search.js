@@ -314,7 +314,6 @@ function resultPrint(object, viewMode){
    let {resultArray, filteredArray, searchTime, keyword, errorLogArray} = object
 
    let {consoleMode} = viewMode
-     console.log(viewMode)
    if(errorLogArray.length >= 1 && consoleMode.showParseError) {
      errorLogArray.map(item => {
        console.log(item)

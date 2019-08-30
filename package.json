@@ -1,10 +1,11 @@
 {
   "name": "baidur",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "baidur 是一个在命令行搜百度的工具",
-  "main": "index.js",
+  "main": "search.js",
+  "homepage": "https://github.com/gitGksgk/baidur",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx mocha test.js --watch test.js"
   },
   "bin": {
     "baidur": "./search.js"

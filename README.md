@@ -63,6 +63,12 @@ setupHistory 要求node版本11.10.0
 还有很多有价值的中文网页由于各种原因未能被百度收录
 
 # 开发进度
+```
+git clone https://github.com/gitGksgk/baidur
+cd baidur
+npm test
+```
+目前测试还没写完
 
 o: done  a: alpha b: beta  - thoughts  // cancel & comment<br  />
 显示
@@ -92,7 +98,7 @@ o- 脱离setupHistory 以便降低node版本等级要求<br  />
 -- 历史压缩<br  />
 -- 仅记录搜索词<br  />
 b- 上下方向键查询历史, 字节支持 // 得自己动手 困难 // 似乎发布后直接支持了<br  />
--- 默认config的写入<br  />
+o- 默认config的写入<br  />
 o- repl: save current config<br  />
 -- repl: show current config<br  />
 -- repl 加入filter<br  />
