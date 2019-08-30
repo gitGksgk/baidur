@@ -25,6 +25,7 @@ baidur 关键词
 baidur 关键词 site:stackoverflow.com
 baidur "关键词 -排除词"  
 ```
+这将启动一个repl交互解释器，以后可以直接在解释器里输入关键词，回车搜索
 
 如要使用 - 语法，引号是必要的。否则bash将认为是一个选项参数而导致错误
 
@@ -34,6 +35,7 @@ alias bs="baidur $@ site:stackoverflow.com"<br  />
 alias bn="baidur '关键词 -排除词1 -排除词2'" // 注意搜索引擎的词数限制<br  />
 ```
 
+程序将在home文件夹（linux、mac 一般为 /Users/username ， windows 一般为 C:\users\username) 建立.baidur 文件，用于保存搜索历史与配置，可以直接进去修改配置。也可以在命令行修改部分配置。
 
 # Installation 安装
 
@@ -62,7 +64,7 @@ setupHistory 要求node版本11.10.0
 
 # 开发进度
 
-o: done  a: alpha - thoughts  // cancel & comment<br  />
+o: done  a: alpha b: beta  - thoughts  // cancel & comment<br  />
 显示
 o- 快速、干净、自定义色彩<br  />
 o- 关键词长度超限警告<br  />
@@ -89,11 +91,12 @@ o- historySize 配置<br  />
 o- 脱离setupHistory 以便降低node版本等级要求<br  />
 -- 历史压缩<br  />
 -- 仅记录搜索词<br  />
--- 上下方向键查询历史, 字节支持 // 得自己动手 困难<br  />
+b- 上下方向键查询历史, 字节支持 // 得自己动手 困难 // 似乎发布后直接支持了<br  />
 -- 默认config的写入<br  />
 -- repl: save current config<br  />
 -- repl: show current config<br  />
 -- repl 加入filter<br  />
+-- repl key mapping<br  />
 
 自定义结果页数// 需要拼接结果; 弄一个队列
                 // 定制条数与首屏速度矛盾，定制页数又不便于使用，最好自定义结果条数。这又与渲染时间矛盾，不知道要抓几条才能够数
@@ -113,8 +116,10 @@ a 自检程序<br  />
 - 错误处理<br  />
 o- 无结果<br  />
 
+# known issue 已知问题
+偶尔会显示 MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 pipe listeners added. Use emitter.setMaxListeners() to increase limit， 原因暂时不明
 
-# License
+# License 协议
 
 GPL 3.0
 

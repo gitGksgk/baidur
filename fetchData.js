@@ -2,7 +2,7 @@ const baidu = require('baidu-search')
 const {parseBaiduRedirect} = require('./parseRedirect.js')
 
 async function baiduFilter(keyword, page, timewait){
-  /* 基础策略：把description空的放行
+  /* 基础策略：把description空的过滤
    * 为了提速，如果贪心策略，搞乱分页，需要保存进全局破坏封装性且拖慢首屏速度
    * 现在决定第一页直接过滤无description的，后面保持
    * */
