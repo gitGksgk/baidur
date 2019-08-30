@@ -1,6 +1,6 @@
 {
   "name": "baidur",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "baidur 是一个在命令行搜百度的工具",
   "main": "search.js",
   "homepage": "https://github.com/gitGksgk/baidur",
