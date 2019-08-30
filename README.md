@@ -31,8 +31,9 @@ baidur "关键词 -排除词"
 
 设置bash alias, 例如
 ```
-alias bs="baidur $@ site:stackoverflow.com"<br  />
-alias bn="baidur '关键词 -排除词1 -排除词2'" // 注意搜索引擎的词数限制<br  />
+alias bs="baidur $@ site:stackoverflow.com"
+alias bg="baidur $@ site:github.com"
+alias bn="baidur '关键词 -排除词1 -排除词2'" # 注意搜索引擎的词数限制
 ```
 
 程序将在home文件夹（linux、mac 一般为 /Users/username ， windows 一般为 C:\users\username) 建立.baidur 文件，用于保存搜索历史与配置，可以直接进去修改配置。也可以在命令行修改部分配置。
