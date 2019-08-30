@@ -61,7 +61,7 @@ emitter.setMaxListeners(200)
         showFilter,
         showTime,
         showCurrentWord,
-        showParseError,
+        showError,
       }
    }
    historyConfig: {
@@ -99,11 +99,11 @@ program
     showReverse: true, //ok
     enableQueueNextSearch: true, //ok 
     parseTimeout: 1000, //ok
-    consoleMode: {
+    consoleMode: {  //ok
       showFilter: true,
       showTime: true,
       showCurrentWord: true,
-      showParseError: false,
+      showError: false,
     }
   }
   let defaultHistoryConfig = {
@@ -133,7 +133,7 @@ program
           showFilter, // 显示被过滤的站点标题
           showTime, // 显示搜索时间
           showCurrentWord, // 显示当前搜索词
-          showParseError, // 显示重定向解析失败的条目
+          showError, // 显示错误信息，包括没搜到结果、重定向解析失败等
         }
       }
       historyConfig: {
@@ -314,7 +314,7 @@ function resultPrint(object, viewMode){
    let {resultArray, filteredArray, searchTime, keyword, errorLogArray} = object
 
    let {consoleMode} = viewMode
-   if(errorLogArray.length >= 1 && consoleMode.showParseError) {
+   if(errorLogArray.length >= 1 && consoleMode.showError) {
      errorLogArray.map(item => {
        console.log(item)
      })

@@ -1,4 +1,5 @@
 const baidu = require('baidu-search')
+const chalk = require('chalk')
 const {parseBaiduRedirect} = require('./parseRedirect.js')
 
 async function baiduFilter(keyword, page, timewait){
