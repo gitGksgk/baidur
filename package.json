@@ -1,6 +1,6 @@
 {
   "name": "baidur",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "baidur 是一个在命令行搜百度的工具",
   "main": "index.js",
   "scripts": {
